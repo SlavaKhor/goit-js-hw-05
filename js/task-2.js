@@ -1,21 +1,5 @@
-// Via For Each
 
-const getUsersWithFriend =(users, friendName)=>{
-    
-    const newArr = [];
-
-    users.forEach(user => {
-        if(user.friends.includes(friendName)){
-            newArr.push(user.name)
-        }
-    });
-    return newArr;
-}
-
-// Via Filter
-
-const getUsersWithFriend2 = (users, friendName) => users.filter(user => user.friends.includes(friendName))
-                                                    .map(user => user.name);
+const getUsersWithFriend = (users, friendName) => users.filter(user => user.friends.includes(friendName));
 
 const allUsers = [
   {
@@ -48,7 +32,7 @@ const allUsers = [
   }
 ];
 
-console.log(getUsersWithFriend2(allUsers, "Briana Decker")); 
+console.log(getUsersWithFriend(allUsers, "Briana Decker")); 
 // [
 //   {
 //     name: "Sharlene Bush",
@@ -60,7 +44,7 @@ console.log(getUsersWithFriend2(allUsers, "Briana Decker"));
 //   }
 // ]
 
-console.log(getUsersWithFriend2(allUsers, "Goldie Gentry"));
+console.log(getUsersWithFriend(allUsers, "Goldie Gentry"));
 // [
 //   {
 //     name: "Elma Head",
